@@ -6,7 +6,9 @@ from Generate_sentence import add_sentence
 
 
 def model_create():
-    model_id = "meta-llama/Meta-Llama-3-8B-Instruct"  
+    
+    model_id =  "distilbert-base-uncased"  # Example model, replace with your choice
+    # For regression, you might want to use a model like "distilbert-base-
     tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
     model = AutoModelForSequenceClassification.from_pretrained(
     model_id,
@@ -16,7 +18,7 @@ def model_create():
 
     return tokenizer, model
 
- 
+
 
 def preprocess(example):
     model,tokenizer=model_create()
